@@ -19,7 +19,7 @@ public class RESTAPI {
 
         HttpRequest postRequest = HttpRequest.newBuilder()
                 .uri(new URI("https://api.assemblyai.com/v2/transcript"))
-                .header("Authorization", "fbc0930b9ce2475f8c43fb5a69456261")
+                .header("Authorization", "${{ secrets.YOUR_TOKEN }}")
                 .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                 .build();   //the post/create request is built
 
@@ -33,7 +33,7 @@ public class RESTAPI {
 
         HttpRequest getRequest = HttpRequest.newBuilder()
                 .uri(new URI("https://api.assemblyai.com/v2/transcript/" + transcript.getID()))
-                .header("Authorization", "fbc0930b9ce2475f8c43fb5a69456261")
+                .header("Authorization", "${{ secrets.YOUR_TOKEN }}")
                 .GET().build();
 
         do {
